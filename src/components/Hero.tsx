@@ -1,0 +1,90 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ShieldCheck, Droplet, Clock } from "lucide-react";
+
+export default function Hero() {
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-24 overflow-hidden bg-secondary">
+      {/* Background Image / Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=2000" 
+          alt="Premium Home Exterior" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/85 to-slate-900/90 z-10" />
+        {/* Decorative elements representing water/cleaning */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/20 blur-[120px] rounded-full transform translate-x-1/2 -translate-y-1/4 z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-sky-400/10 blur-[100px] rounded-full transform -translate-x-1/4 translate-y-1/4 z-10 pointer-events-none" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-sm font-medium text-sky-100 mb-6"
+          >
+            <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+            Voted #1 Exterior Cleaning in the Area
+          </motion.div>
+          
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6"
+          >
+            Restore Your Home's <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-primary">True Value.</span>
+          </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-10"
+          >
+            Professional pressure washing, soft washing, and roof cleaning services. We safely remove years of algae, mold, and grime in a single day.
+          </motion.p>
+          
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.3 }}
+             className="flex flex-col sm:flex-row gap-4"
+          >
+            <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_0_40px_rgba(2,132,199,0.4)] hover:shadow-[0_0_60px_rgba(2,132,199,0.6)] transform hover:-translate-y-1">
+              Get Your Free Quote
+            </a>
+            <a href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-lg backdrop-blur-sm transition-all border border-white/10">
+              View Our Services
+            </a>
+          </motion.div>
+
+          {/* Quick Trust Bar */}
+          <motion.div
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ duration: 1, delay: 0.6 }}
+             className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-white/10"
+          >
+            <div className="flex items-center gap-3 text-slate-300">
+              <ShieldCheck className="text-primary" size={24} />
+              <span className="text-sm font-medium">Licensed & Insured</span>
+            </div>
+            <div className="flex items-center gap-3 text-slate-300">
+              <Droplet className="text-primary" size={24} />
+              <span className="text-sm font-medium">Eco-Friendly Safe</span>
+            </div>
+            <div className="flex items-center gap-3 text-slate-300">
+              <Clock className="text-primary" size={24} />
+              <span className="text-sm font-medium">Fast, 1-Day Service</span>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
