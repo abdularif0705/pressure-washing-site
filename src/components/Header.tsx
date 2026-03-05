@@ -51,6 +51,9 @@ export default function Header() {
           <Link href="/#gallery" className="text-sm font-medium transition-colors hover:text-primary text-white/90">
             Our Work
           </Link>
+          <Link href="/results" className="text-sm font-medium transition-colors hover:text-primary text-white/90">
+            Results
+          </Link>
           <Link href="/about" className="text-sm font-medium transition-colors hover:text-primary text-white/90">
             About Us
           </Link>
@@ -83,6 +86,7 @@ export default function Header() {
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 py-4 px-6 flex flex-col gap-4">
           <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary font-medium py-2 border-b border-gray-50">Services</Link>
           <Link href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary font-medium py-2 border-b border-gray-50">Our Work</Link>
+          <Link href="/results" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary font-medium py-2 border-b border-gray-50">Results</Link>
           <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary font-medium py-2 border-b border-gray-50">About Us</Link>
           <Link href="/faq" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary font-medium py-2 border-b border-gray-50">FAQ</Link>
           <a href="tel:555-123-4567" className="mt-2 flex justify-center items-center gap-2 bg-primary text-secondary py-3 rounded-full font-bold">

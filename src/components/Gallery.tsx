@@ -59,9 +59,9 @@ export default function Gallery() {
           {/* Clean Image (Background - Actual Photo showing on the Right) */}
           <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-white">
             <img 
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600" 
+              src="/images/results/house-after.jpg" 
               alt="Pristine Home Exterior After Cleaning" 
-              className="w-full h-full object-cover opacity-90"
+              className="w-full h-full object-cover"
               draggable="false"
             />
           </div>
@@ -76,7 +76,7 @@ export default function Gallery() {
             style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=1600" 
+              src="/images/results/house-before.jpg" 
               alt="Weathered Home Exterior Before Cleaning" 
               className="w-full h-full object-cover"
               draggable="false"
