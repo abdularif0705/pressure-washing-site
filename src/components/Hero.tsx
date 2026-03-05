@@ -1,13 +1,23 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ShieldCheck, Droplet, Clock } from "lucide-react";
+import { useRef } from "react";
 
 export default function Hero() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  
+  // Parallax translation for the background
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-24 overflow-hidden bg-secondary">
-      {/* Background Image / Overlay */}
-      <div className="absolute inset-0 z-0">
+    <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-24 overflow-hidden bg-secondary">
+      {/* Background Image / Overlay - Now with Parallax */}
+      <motion.div style={{ y }} className="absolute inset-0 z-0 h-[120%] -top-[10%]">
         <img 
           src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=2000" 
           alt="Premium Home Exterior" 
@@ -17,7 +27,7 @@ export default function Hero() {
         {/* Decorative elements representing water/cleaning */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/20 blur-[120px] rounded-full transform translate-x-1/2 -translate-y-1/4 z-10 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-sky-400/10 blur-[100px] rounded-full transform -translate-x-1/4 translate-y-1/4 z-10 pointer-events-none" />
-      </div>
+      </motion.div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl">
@@ -35,9 +45,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6"
+            className="text-5xl md:text-7xl font-serif font-extrabold text-white tracking-tight leading-[1.1] mb-6"
           >
-            Restore Your Home's <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-primary">True Value.</span>
+            Restore Your Home's <span className="font-sans italic font-light text-primary">True Value.</span>
           </motion.h1>
           
           <motion.p
