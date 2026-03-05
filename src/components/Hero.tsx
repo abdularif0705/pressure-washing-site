@@ -66,10 +66,10 @@ export default function Hero() {
              transition={{ duration: 0.6, delay: 0.3 }}
              className="flex flex-col sm:flex-row gap-4 mb-20"
           >
-            <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-secondary font-semibold text-lg transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-primary/20 border border-primary/20">
+            <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-slate-900 font-medium text-lg transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-primary/20 border border-primary/20">
               Get Your Free Quote
             </a>
-            <a href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 border border-white/10 hover:border-white/30">
+            <a href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-normal text-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 border border-white/10 hover:border-white/30">
               View Our Services
             </a>
           </motion.div>

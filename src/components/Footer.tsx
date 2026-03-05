@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -25,10 +27,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#services" className="hover:text-primary transition-colors">Our Services</a></li>
-              <li><a href="#gallery" className="hover:text-primary transition-colors">Before & After</a></li>
-              <li><a href="#about" className="hover:text-primary transition-colors">Why Choose Us</a></li>
-              <li><a href="#quote" className="hover:text-primary transition-colors">Get a Quote</a></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
+              <li><Link href="/#gallery" className="hover:text-primary transition-colors">Before & After</Link></li>
+              <li><Link href="/#quote" className="hover:text-primary transition-colors">Request Estimate</Link></li>
             </ul>
           </div>
 
@@ -36,10 +38,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-lg mb-4">Services</h4>
             <ul className="space-y-3">
-              <li>House Soft Washing</li>
-              <li>Roof Algae Removal</li>
-              <li>Gutter Brightening</li>
-              <li>Concrete & Driveways</li>
+              <li><Link href="/services/soft-washing" className="hover:text-primary transition-colors">House Soft Washing</Link></li>
+              <li><Link href="/services/roof-cleaning" className="hover:text-primary transition-colors">Roof Algae Removal</Link></li>
+              <li><Link href="/services/gutter-cleaning" className="hover:text-primary transition-colors">Gutter Brightening</Link></li>
+              <li><Link href="/services/driveway-cleaning" className="hover:text-primary transition-colors">Concrete & Driveways</Link></li>
             </ul>
           </div>
 
@@ -53,8 +55,8 @@ export default function Footer() {
             </span>
             <span className="hidden md:inline text-slate-700">|</span>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>

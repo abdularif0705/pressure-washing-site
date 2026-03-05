@@ -19,9 +19,14 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+import { Toaster } from 'react-hot-toast';
+
 export const metadata: Metadata = {
-  title: "Pressure Pro Services | Top-Rated Exterior Cleaning",
-  description: "Professional pressure washing, soft washing, gutter cleaning, and roof cleaning services. Restore your home's true value today.",
+  title: "Pressure Pro | Top-Rated Exterior Cleaning",
+  description: "Professional pressure washing, soft washing, gutter cleaning, and roof cleaning services. Restore your property's original glory.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -37,6 +42,19 @@ export default function RootLayout({
         <ScrollProgress />
         {children}
         <FloatingCTA />
+        <Toaster position="bottom-right" toastOptions={{
+          style: {
+            background: '#0B1120', // secondary color
+            color: '#fff',
+            borderRadius: '9999px',
+          },
+          success: {
+            iconTheme: {
+              primary: '#D4AF37', // primary gold color
+              secondary: '#fff',
+            },
+          },
+        }} />
       </body>
     </html>
   );

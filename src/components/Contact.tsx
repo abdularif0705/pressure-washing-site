@@ -1,9 +1,49 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MapPin, Phone, Mail, Sparkles } from "lucide-react";
+import { Send, MapPin, Phone, Mail, Sparkles, Loader2 } from "lucide-react";
+import toast from "react-hot-toast";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Create FormData from the event target
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      address: formData.get("address"),
+      service: formData.get("service"),
+      details: formData.get("details"),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Something went wrong.');
+      }
+
+      toast.success("Estimate request sent successfully! We'll be in touch soon.");
+      (e.target as HTMLFormElement).reset(); // Clear form
+    } catch (error: any) {
+      toast.error(error.message || "Failed to send request. Please try calling us instead.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="quote" className="py-24 bg-white relative overflow-hidden">
       {/* Premium Minimalist Background Lines */}
@@ -84,26 +124,26 @@ export default function Contact() {
             {/* Subtle Gold accent line */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 rounded-b-full"></div>
             
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Name</label>
-                  <input type="text" id="name" className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="John Doe" />
+                  <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Name <span className="text-red-400">*</span></label>
+                  <input type="text" id="name" name="name" required className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="John Doe" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone</label>
-                  <input type="tel" id="phone" className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="(555) 000-0000" />
+                  <label htmlFor="phone" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone <span className="text-red-400">*</span></label>
+                  <input type="tel" id="phone" name="phone" required className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="(555) 000-0000" />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="address" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Address</label>
-                <input type="text" id="address" className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="123 Property Ave, City" />
+                <label htmlFor="address" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Address <span className="text-red-400">*</span></label>
+                <input type="text" id="address" name="address" required className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="123 Property Ave, City" />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="service" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
-                <select id="service" className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-slate-600 appearance-none cursor-pointer">
+                <label htmlFor="service" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service <span className="text-red-400">*</span></label>
+                <select id="service" name="service" required className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-slate-600 appearance-none cursor-pointer">
                   <option value="">Select Primary Service...</option>
                   <option value="softwashing">House Soft Washing</option>
                   <option value="roof">Roof Cleaning</option>
@@ -115,14 +155,25 @@ export default function Contact() {
 
               <div className="space-y-2">
                 <label htmlFor="details" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Details (Optional)</label>
-                <textarea id="details" rows={3} className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400 resize-none" placeholder="Any specific areas of concern..."></textarea>
+                <textarea id="details" name="details" rows={3} className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400 resize-none" placeholder="Any specific areas of concern..."></textarea>
               </div>
 
               <button 
-                className="w-full group bg-secondary hover:bg-secondary-light text-primary font-bold text-lg py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 overflow-hidden mt-8"
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full group bg-secondary hover:bg-secondary-light disabled:bg-slate-300 disabled:cursor-not-allowed text-primary disabled:text-slate-500 font-bold text-lg py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 overflow-hidden mt-8"
               >
-                <span>Request Estimate</span>
-                <Send size={18} className="transition-transform group-hover:translate-x-1" />
+                {isSubmitting ? (
+                  <>
+                    <span>Sending</span>
+                    <Loader2 size={18} className="animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    <span>Request Estimate</span>
+                    <Send size={18} className="transition-transform group-hover:translate-x-1" />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>
