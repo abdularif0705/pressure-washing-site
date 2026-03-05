@@ -15,9 +15,33 @@ export default function Results() {
     },
     {
       title: "Siding Rejuvenation",
-      description: "Safely removing years of organic growth without applying damaging high pressure.",
+      description: "Safely removing years of organic moss and algae without applying damaging high pressure.",
       before: "/images/results/siding-before.jpg",
       after: "/images/results/siding-after.jpg"
+    },
+    {
+      title: "Roof Algae Removal",
+      description: "Eradicating destructive black streaks (Gloeocapsa magma) to instantly revive your curb appeal and extend the life of your roof.",
+      before: "/images/results/roof-before.jpg",
+      after: "/images/results/roof-after.jpg"
+    },
+    {
+      title: "Deck Restoration",
+      description: "Bringing life back to outdoor living spaces by stripping away deeply embedded graying, grime, and mold.",
+      before: "/images/results/deck-before.jpg",
+      after: "/images/results/deck-after.jpg"
+    },
+    {
+      title: "Brick Revitalization",
+      description: "Deep-cleaning porous masonry and brick surfaces to restore their vibrant natural tones securely.",
+      before: "/images/results/brick-before.jpg",
+      after: "/images/results/brick-after.jpg"
+    },
+    {
+      title: "Stucco Safewash",
+      description: "Delicately lifting severe staining from delicate stucco without eroding the material or peeling paint.",
+      before: "/images/results/stucco-before.jpg",
+      after: "/images/results/stucco-after.jpg"
     }
   ];
 

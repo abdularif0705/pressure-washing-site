@@ -90,7 +90,7 @@ export default function About() {
             <div className="w-full md:w-1/2 relative z-10">
                <div className="aspect-[4/3] md:aspect-square bg-slate-50 rounded-[2rem] overflow-hidden relative shadow-xl">
                   {/* Premium Unsplash placeholder for the founders */}
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Abdul Rahman Arif and Umer Shahzad" className="object-cover w-full h-full opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700 ease-out grayscale hover:grayscale-0" />
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Abdul Rehman Arif and Umer Shahzad" className="object-cover w-full h-full opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700 ease-out grayscale hover:grayscale-0" />
                   <div className="absolute inset-0 border border-black/5 rounded-[2rem] pointer-events-none" />
                </div>
                
@@ -107,12 +107,12 @@ export default function About() {
                 Pressure Pro wasn't just born out of a desire to clean houses; it was founded on the radical idea that a pristine environment fundamentally shifts your daily happiness. 
               </p>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed font-light">
-                When childhood friends <strong className="text-secondary font-medium">Abdul Rahman Arif</strong> and <strong className="text-secondary font-medium">Umer Shahzad</strong> started the company, they realized that scrubbing away years of grime from a family's driveway didn't just improve property value—it brought immediate, visible joy. Their mission became simple: deliver unparalleled exterior care that brings happiness and restores profound pride of ownership to every client.
+                When childhood friends <strong className="text-secondary font-medium">Abdul Rehman Arif</strong> and <strong className="text-secondary font-medium">Umer Shahzad</strong> started the company, they realized that scrubbing away years of grime from a family's driveway didn't just improve property value—it brought immediate, visible joy. Their mission became simple: deliver unparalleled exterior care that brings happiness and restores profound pride of ownership to every client.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-8 pt-8 border-t border-slate-100">
                  <div>
-                    <p className="font-serif font-bold text-2xl text-secondary mb-1">Abdul Rahman Arif</p>
+                    <p className="font-serif font-bold text-2xl text-secondary mb-1">Abdul Rehman Arif</p>
                     <p className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Co-Founder & CEO</p>
                  </div>
                  <div>
