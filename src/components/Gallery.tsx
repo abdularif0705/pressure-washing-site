@@ -56,14 +56,20 @@ export default function Gallery() {
           onMouseMove={handleMove}
           onTouchMove={handleMove}
         >
-          {/* Dirty Image (Background) */}
-          <div className="absolute inset-0 bg-slate-800 flex items-center justify-center overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?auto=format&fit=crop&q=80&w=1600" 
-              alt="Dirty Home Exterior" 
-              className="w-full h-full object-cover opacity-80"
-              draggable="false"
-            />
+          {/* Dirty Image (Background - Simulated with filters for perfect alignment) */}
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+            {/* We use the exact same image but apply CSS filters to make it look aged and dirty */}
+            <div className="w-full h-full relative" style={{ filter: 'brightness(0.6) sepia(0.6) hue-rotate(-20deg) contrast(1.1) saturate(0.8)' }}>
+              <img 
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600" 
+                alt="Dirty Home Exterior" 
+                className="w-full h-full object-cover"
+                draggable="false"
+              />
+              {/* Add a subtle grunge overlay to enhance the dirty effect */}
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dust.png')] opacity-60 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-[#3a2e24] mix-blend-color-burn opacity-40" />
+            </div>
           </div>
           
           <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white px-4 py-2 rounded-full font-semibold text-sm z-10 pointer-events-none">

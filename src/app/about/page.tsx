@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 
 export default function About() {
   const stats = [
-    { label: "Years Experience", value: "10+", icon: <Clock className="text-primary w-6 h-6 mb-3" /> },
-    { label: "Properties Cleaned", value: "5,000+", icon: <ShieldCheck className="text-primary w-6 h-6 mb-3" /> },
-    { label: "Happy Clients", value: "100%", icon: <Users className="text-primary w-6 h-6 mb-3" /> },
-    { label: "Awards Won", value: "12", icon: <Award className="text-primary w-6 h-6 mb-3" /> },
+    { label: "Licensed & Insured", value: "100%", icon: <ShieldCheck className="text-primary w-6 h-6 mb-3" /> },
+    { label: "Service Standard", value: "5-Star", icon: <Award className="text-primary w-6 h-6 mb-3" /> },
+    { label: "Satisfaction Guarantee", value: "100%", icon: <Users className="text-primary w-6 h-6 mb-3" /> },
+    { label: "Eco-Friendly", value: "100%", icon: <ShieldCheck className="text-primary w-6 h-6 mb-3" /> },
   ];
 
   return (
@@ -35,7 +35,7 @@ export default function About() {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-600 mb-8 leading-relaxed"
             >
-              At Pressure Pro, we believe that your home is more than just a building—it's your sanctuary, your investment, and your pride. For over a decade, we have been the premier choice for luxury exterior cleaning services in Windsor and LaSalle.
+              At Pressure Pro, we believe that your home is more than just a building—it's your sanctuary, your investment, and your pride. As Windsor and LaSalle's dedicated exterior specialists, our mission is to deliver an unparalleled level of care, precision, and luxury service.
             </motion.p>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -96,7 +96,7 @@ export default function About() {
                
                {/* Elegant gold accent badge */}
                <div className="absolute -bottom-6 -right-2 md:-right-8 bg-primary text-secondary p-6 rounded-3xl shadow-xl backdrop-blur-md hidden sm:block border-4 border-white">
-                 <div className="text-4xl font-serif font-bold mb-1">10+</div>
+                 <div className="text-4xl font-serif font-bold mb-1">3+</div>
                  <div className="text-sm font-bold uppercase tracking-wider opacity-90">Years Together</div>
                </div>
             </div>

@@ -41,7 +41,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm text-sm font-medium text-primary mb-6 shadow-[0_0_15px_rgba(212,175,55,0.15)]"
           >
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
-            Voted #1 Exterior Cleaning in Windsor & LaSalle
+            Setting the Standard in Windsor & LaSalle
           </motion.div>
           
           {/* V3 Epic UI: Staggered Text Reveal */}

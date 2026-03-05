@@ -24,9 +24,6 @@ import { Toaster } from 'react-hot-toast';
 export const metadata: Metadata = {
   title: "Pressure Pro | Top-Rated Exterior Cleaning",
   description: "Professional pressure washing, soft washing, gutter cleaning, and roof cleaning services. Restore your property's original glory.",
-  icons: {
-    icon: "/logo.png",
-  },
 };
 
 export default function RootLayout({
