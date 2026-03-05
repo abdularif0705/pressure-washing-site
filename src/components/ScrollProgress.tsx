@@ -1,0 +1,20 @@
+"use client";
+
+import { motion, useScroll, useSpring } from "framer-motion";
+
+export default function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  // Add a spring physics layer to the raw scroll value for a buttery smooth feel
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  return (
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-400 via-primary to-primary-hover z-[100] origin-left"
+      style={{ scaleX }}
+    />
+  );
+}

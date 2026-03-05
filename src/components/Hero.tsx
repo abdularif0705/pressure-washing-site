@@ -3,6 +3,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ShieldCheck, Droplet, Clock } from "lucide-react";
 import { useRef } from "react";
+import TextReveal from "./TextReveal";
+import MagneticButton from "./MagneticButton";
+import InfiniteMarquee from "./InfiniteMarquee";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -41,14 +44,12 @@ export default function Hero() {
             Voted #1 Exterior Cleaning in the Area
           </motion.div>
           
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          {/* V3 Epic UI: Staggered Text Reveal */}
+          <TextReveal 
+            text="Restore Your Home's True Value." 
             className="text-5xl md:text-7xl font-serif font-extrabold text-white tracking-tight leading-[1.1] mb-6"
-          >
-            Restore Your Home's <span className="font-sans italic font-light text-primary">True Value.</span>
-          </motion.h1>
+            delay={0.1}
+          />
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -63,38 +64,45 @@ export default function Hero() {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.6, delay: 0.3 }}
-             className="flex flex-col sm:flex-row gap-4"
+             className="flex flex-col sm:flex-row gap-4 mb-20"
           >
-            <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_0_40px_rgba(2,132,199,0.4)] hover:shadow-[0_0_60px_rgba(2,132,199,0.6)] transform hover:-translate-y-1">
-              Get Your Free Quote
-            </a>
-            <a href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-lg backdrop-blur-sm transition-all border border-white/10">
-              View Our Services
-            </a>
-          </motion.div>
-
-          {/* Quick Trust Bar */}
-          <motion.div
-             initial={{ opacity: 0 }}
-             animate={{ opacity: 1 }}
-             transition={{ duration: 1, delay: 0.6 }}
-             className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-white/10"
-          >
-            <div className="flex items-center gap-3 text-slate-300">
-              <ShieldCheck className="text-primary" size={24} />
-              <span className="text-sm font-medium">Licensed & Insured</span>
-            </div>
-            <div className="flex items-center gap-3 text-slate-300">
-              <Droplet className="text-primary" size={24} />
-              <span className="text-sm font-medium">Eco-Friendly Safe</span>
-            </div>
-            <div className="flex items-center gap-3 text-slate-300">
-              <Clock className="text-primary" size={24} />
-              <span className="text-sm font-medium">Fast, 1-Day Service</span>
-            </div>
+            {/* V3 Epic UI: Magnetic Buttons */}
+            <MagneticButton>
+              <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_0_40px_rgba(212,175,55,0.4)] hover:shadow-[0_0_60px_rgba(212,175,55,0.6)]">
+                Get Your Free Quote
+              </a>
+            </MagneticButton>
+            <MagneticButton>
+              <a href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-lg backdrop-blur-sm transition-all border border-white/10">
+                View Our Services
+              </a>
+            </MagneticButton>
           </motion.div>
         </div>
       </div>
+
+      {/* V3 Epic UI: Infinite Trust Marquee positioned at the bottom inner edge of the Hero */}
+      <div className="absolute bottom-0 left-0 w-full z-20">
+        <InfiniteMarquee items={[
+          <div key="1" className="flex items-center gap-3 text-slate-300 font-serif text-lg">
+            <ShieldCheck className="text-primary" size={24} />
+            <span>Fully Licensed & $2M Insured</span>
+          </div>,
+          <div key="2" className="flex items-center gap-3 text-slate-300 font-serif text-lg">
+            <Droplet className="text-primary" size={24} />
+            <span>100% Eco-Friendly Solutions</span>
+          </div>,
+          <div key="3" className="flex items-center gap-3 text-slate-300 font-serif text-lg">
+            <Clock className="text-primary" size={24} />
+            <span>Fast, 1-Day Premium Service</span>
+          </div>,
+          <div key="4" className="flex items-center gap-3 text-slate-300 font-serif text-lg">
+            <span className="text-primary font-bold">5.0 ★</span>
+            <span>Over 200+ Satisfied Locals</span>
+          </div>
+        ]} />
+      </div>
+
     </section>
   );
 }
