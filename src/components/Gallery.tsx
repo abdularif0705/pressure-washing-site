@@ -42,7 +42,7 @@ export default function Gallery() {
             transition={{ delay: 0.2 }}
             className="text-lg text-gray-600"
           >
-            Don't just take our word for it. See how we've restored properties across the area with our soft washing and pressure washing techniques.
+            Don't just take our word for it. See how we've restored properties across Windsor and LaSalle with our soft washing and pressure washing techniques.
           </motion.p>
         </div>
 

@@ -26,9 +26,16 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-3">
+          <Link 
+            href="/" 
+            className="flex items-center gap-3"
+            onClick={(e) => {
+              if (window.location.pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
             <img src="/logo.png" alt="Pressure Pro Logo" className="w-10 h-10 object-contain rounded border border-white/10 shadow-sm" />
             <span className="font-serif font-bold text-2xl tracking-wide text-white">
               <span className="text-primary">Pressure</span>Pro

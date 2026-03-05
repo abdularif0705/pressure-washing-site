@@ -35,7 +35,7 @@ export default function About() {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-600 mb-8 leading-relaxed"
             >
-              At Pressure Pro, we believe that your home is more than just a building—it's your sanctuary, your investment, and your pride. For over a decade, we have been the premier choice for luxury exterior cleaning services in the metro area.
+              At Pressure Pro, we believe that your home is more than just a building—it's your sanctuary, your investment, and your pride. For over a decade, we have been the premier choice for luxury exterior cleaning services in Windsor and LaSalle.
             </motion.p>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
