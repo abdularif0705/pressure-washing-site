@@ -57,7 +57,7 @@ export default function About() {
             </motion.div>
           </div>
           
-          <div className="grid grid-cols-2 gap-6 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl -z-10" />
 
             {stats.map((stat, index) => (
@@ -66,7 +66,7 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 + (index * 0.1) }}
-                className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center"
+                className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center"
               >
                 {stat.icon}
                 <div className="text-3xl font-serif font-bold text-secondary mb-1">{stat.value}</div>
@@ -82,7 +82,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col md:flex-row gap-12 lg:gap-20 items-center relative overflow-hidden"
+            className="bg-white p-6 sm:p-8 md:p-16 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col md:flex-row gap-8 lg:gap-20 items-center relative overflow-hidden"
           >
             {/* Soft gold glow inside the light card */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
@@ -158,7 +158,7 @@ export default function About() {
                     <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/40 to-transparent opacity-90 transition-opacity duration-300" />
                  </div>
                  
-                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                 <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <div className="w-10 h-1 bg-primary mb-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" />
                     <h3 className="text-2xl font-serif font-bold text-white mb-1">{member.name}</h3>
                     <p className="text-primary font-medium tracking-wide text-sm uppercase">{member.role}</p>

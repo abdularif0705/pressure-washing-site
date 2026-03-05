@@ -18,7 +18,7 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-24 overflow-hidden bg-secondary">
+    <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center pt-32 md:pt-40 pb-24 overflow-hidden bg-secondary">
       {/* Background Image / Overlay - Now with Parallax */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 h-[120%] -top-[10%]">
         <img 

@@ -10,14 +10,12 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">PP</span>
-              </div>
-              <span className="font-bold text-xl tracking-tight text-white">
-                Pressure Pro
+            <Link href="/" className="flex items-center gap-3 mb-4 inline-flex">
+              <img src="/logo.png" alt="Pressure Pro Logo" className="w-10 h-10 object-contain rounded border border-white/10 shadow-sm" />
+              <span className="font-serif font-bold text-2xl tracking-wide text-white">
+                <span className="text-primary">Pressure</span>Pro
               </span>
-            </div>
+            </Link>
             <p className="max-w-md leading-relaxed mb-6">
               Premium exterior cleaning services. We specialize in soft washing, roof cleaning, and making your property look brand new again.
             </p>

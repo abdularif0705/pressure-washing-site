@@ -68,7 +68,7 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-8 py-6 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors"
+                className="w-full px-5 sm:px-8 py-5 sm:py-6 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors"
               >
                 <span className="font-serif font-bold text-lg md:text-xl text-secondary pr-8">{faq.question}</span>
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIndex === index ? 'bg-primary text-secondary' : 'bg-slate-100 text-slate-400'}`}>
@@ -84,7 +84,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="px-8 pb-6 pt-2 text-slate-600 leading-relaxed border-t border-slate-50 mx-8">
+                    <div className="px-5 sm:px-8 pb-5 sm:pb-6 pt-4 text-slate-600 leading-relaxed border-t border-slate-100">
                       {faq.answer}
                     </div>
                   </motion.div>

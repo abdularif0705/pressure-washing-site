@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Home as HomeIcon, Waves, ArrowRight } from "lucide-react";
 
 export default function Services() {
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
   const services = [
     {
       title: "Soft Washing",
@@ -61,53 +64,60 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: service.delay, duration: 0.6 }}
-              className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer"
-            >
-              {/* Background Image */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${service.image})` }}
-              />
-              
-              {/* Initial Gradient Overlay (Darker at bottom for text readability) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent transition-opacity duration-500 group-hover:opacity-40" />
-              
-              {/* Hover Overlay (Full dark for text reveal) */}
-              <div className="absolute inset-0 bg-secondary/80 backdrop-blur-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          {services.map((service, index) => {
+            const isActive = activeCard === index;
+            
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: service.delay, duration: 0.6 }}
+                className="relative h-[450px] rounded-3xl overflow-hidden cursor-pointer"
+                onMouseEnter={() => setActiveCard(index)}
+                onMouseLeave={() => setActiveCard(null)}
+                onClick={() => setActiveCard(isActive ? null : index)}
+              >
+                {/* Background Image */}
+                <div 
+                  className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ${isActive ? 'scale-110' : 'scale-100'}`}
+                  style={{ backgroundImage: `url(${service.image})` }}
+                />
+                
+                {/* Initial Gradient Overlay (Darker at bottom for text readability) */}
+                <div className={`absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent transition-opacity duration-500 ${isActive ? 'opacity-40' : 'opacity-100'}`} />
+                
+                {/* Hover Overlay (Full dark for text reveal) */}
+                <div className={`absolute inset-0 bg-secondary/80 backdrop-blur-sm transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`} />
 
-              {/* Content Container */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                {/* Always Visible Title/Icon */}
-                <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    {service.icon}
+                {/* Content Container */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  {/* Always Visible Title/Icon */}
+                  <div className={`transform transition-transform duration-500 ${isActive ? '-translate-y-4' : 'translate-y-0'}`}>
+                    <div className={`transition-opacity duration-500 delay-100 ${isActive ? 'opacity-100' : 'opacity-0'}`}>
+                      {service.icon}
+                    </div>
+                    <h3 className="text-3xl font-serif font-bold text-white mb-2">{service.title}</h3>
+                    <div className={`h-1 bg-primary rounded-full transform origin-left transition-all duration-500 ${isActive ? 'w-full' : 'w-12'}`} />
                   </div>
-                  <h3 className="text-3xl font-serif font-bold text-white mb-2">{service.title}</h3>
-                  <div className="h-1 w-12 bg-primary rounded-full transform origin-left transition-all duration-500 group-hover:w-full group-hover:bg-primary" />
-                </div>
 
-                {/* Reveal on Hover Description */}
-                <div className="overflow-hidden">
-                  <div className="transform translate-y-[120%] opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 mt-6">
-                    <p className="text-slate-200 leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-                    <a href="#quote" className="inline-flex items-center text-primary font-bold hover:text-white transition-colors">
-                      Request Estimate
-                      <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" />
-                    </a>
+                  {/* Reveal on Hover Description */}
+                  <div className="overflow-hidden">
+                    <div className={`transform transition-all duration-500 mt-6 ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-[120%] opacity-0'}`}>
+                      <p className="text-slate-200 leading-relaxed mb-6">
+                        {service.description}
+                      </p>
+                      <a href="#quote" className="inline-flex items-center text-primary font-bold hover:text-white transition-colors">
+                        Request Estimate
+                        <ArrowRight className={`w-5 h-5 ml-2 transform transition-transform ${isActive ? 'translate-x-2' : 'translate-x-0'}`} />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

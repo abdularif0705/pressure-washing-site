@@ -56,34 +56,28 @@ export default function Gallery() {
           onMouseMove={handleMove}
           onTouchMove={handleMove}
         >
-          {/* Dirty Image (Background - Simulated with filters for perfect alignment) */}
-          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-            {/* We use the exact same image but apply CSS filters to make it look aged and dirty */}
-            <div className="w-full h-full relative" style={{ filter: 'brightness(0.6) sepia(0.6) hue-rotate(-20deg) contrast(1.1) saturate(0.8)' }}>
-              <img 
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600" 
-                alt="Dirty Home Exterior" 
-                className="w-full h-full object-cover"
-                draggable="false"
-              />
-              {/* Add a subtle grunge overlay to enhance the dirty effect */}
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dust.png')] opacity-60 mix-blend-multiply" />
-              <div className="absolute inset-0 bg-[#3a2e24] mix-blend-color-burn opacity-40" />
-            </div>
+          {/* Clean Image (Background - Actual Photo showing on the Right) */}
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-white">
+            <img 
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600" 
+              alt="Pristine Home Exterior After Cleaning" 
+              className="w-full h-full object-cover opacity-90"
+              draggable="false"
+            />
           </div>
           
           <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white px-4 py-2 rounded-full font-semibold text-sm z-10 pointer-events-none">
             Before
           </div>
 
-          {/* Clean Image (Foreground, clipped) */}
+          {/* Dirty Image (Foreground, clipped - Actual Photo showing on the Left) */}
           <div 
-            className="absolute inset-0 bg-sky-100 flex items-center justify-center overflow-hidden"
+            className="absolute inset-0 flex items-center justify-center overflow-hidden bg-slate-900"
             style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600" 
-              alt="Clean Home Exterior" 
+              src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=1600" 
+              alt="Weathered Home Exterior Before Cleaning" 
               className="w-full h-full object-cover"
               draggable="false"
             />
