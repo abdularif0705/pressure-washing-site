@@ -46,7 +46,7 @@ export default function Hero() {
           
           {/* V3 Epic UI: Staggered Text Reveal */}
           <TextReveal 
-            text="Restore Your Home's True Value." 
+            text="Your property, restored to its original glory." 
             className="text-5xl md:text-7xl font-serif font-extrabold text-white tracking-tight leading-[1.1] mb-6"
             delay={0.1}
           />
@@ -68,7 +68,7 @@ export default function Hero() {
           >
             {/* V3 Epic UI: Magnetic Buttons */}
             <MagneticButton>
-              <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-lg transition-all shadow-[0_0_40px_rgba(212,175,55,0.4)] hover:shadow-[0_0_60px_rgba(212,175,55,0.6)]">
+              <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-secondary font-extrabold text-lg transition-all shadow-[0_0_40px_rgba(212,175,55,0.4)] hover:shadow-[0_0_60px_rgba(212,175,55,0.6)] border border-primary/20">
                 Get Your Free Quote
               </a>
             </MagneticButton>

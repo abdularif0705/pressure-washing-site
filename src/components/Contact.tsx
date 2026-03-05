@@ -99,7 +99,7 @@ export default function Contact() {
               <motion.button 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary hover:bg-primary-hover text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-colors mt-4"
+                className="w-full bg-primary hover:bg-primary-hover text-secondary font-extrabold text-lg py-4 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] flex items-center justify-center gap-2 transition-colors mt-4"
               >
                 <Send size={20} />
                 Send Request

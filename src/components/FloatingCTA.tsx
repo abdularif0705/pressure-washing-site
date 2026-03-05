@@ -30,9 +30,9 @@ export default function FloatingCTA() {
     >
       <a 
         href="#quote"
-        className="group relative flex items-center justify-center bg-secondary hover:bg-secondary-light text-primary border border-primary/20 p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:shadow-primary/30 hover:-translate-y-1"
+        className="group relative flex items-center justify-center bg-secondary hover:bg-secondary-light text-primary border border-primary/20 px-6 py-4 rounded-full shadow-2xl transition-all duration-300 hover:shadow-primary/30 hover:-translate-y-1"
       >
-        <span className="absolute inset-0 rounded-2xl bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+        <span className="absolute inset-0 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
         <Calculator className="w-6 h-6 mr-3 text-primary" />
         <span className="font-serif font-bold tracking-wide">Get A Quote</span>
       </a>
