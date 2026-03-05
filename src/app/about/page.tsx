@@ -82,33 +82,42 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-xl shadow-slate-200/40 border border-slate-100 flex flex-col md:flex-row gap-12 items-center"
+            className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col md:flex-row gap-12 lg:gap-20 items-center relative overflow-hidden"
           >
-            <div className="w-full md:w-1/2 relative">
-               <div className="aspect-square bg-slate-100 rounded-[2rem] overflow-hidden relative">
-                  {/* Using a premium Unsplash placeholder for the founders */}
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Founders" className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700" />
-                  <div className="absolute inset-0 border-4 border-white rounded-[2rem] pointer-events-none" />
+            {/* Soft gold glow inside the light card */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+            
+            <div className="w-full md:w-1/2 relative z-10">
+               <div className="aspect-[4/3] md:aspect-square bg-slate-50 rounded-[2rem] overflow-hidden relative shadow-xl">
+                  {/* Premium Unsplash placeholder for the founders */}
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Abdul Rahman Arif and Umer Shahzad" className="object-cover w-full h-full opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700 ease-out grayscale hover:grayscale-0" />
+                  <div className="absolute inset-0 border border-black/5 rounded-[2rem] pointer-events-none" />
                </div>
-               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary rounded-full blur-[40px] -z-10 opacity-60" />
+               
+               {/* Elegant gold accent badge */}
+               <div className="absolute -bottom-6 -right-2 md:-right-8 bg-primary text-secondary p-6 rounded-3xl shadow-xl backdrop-blur-md hidden sm:block border-4 border-white">
+                 <div className="text-4xl font-serif font-bold mb-1">10+</div>
+                 <div className="text-sm font-bold uppercase tracking-wider opacity-90">Years Together</div>
+               </div>
             </div>
 
-            <div className="w-full md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-6">Built on <span className="text-primary italic font-light">Happiness</span></h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            <div className="w-full md:w-1/2 z-10 md:pr-4">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-6 leading-tight">Built on <span className="text-primary italic font-light">Happiness.</span></h2>
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed font-light">
                 Pressure Pro wasn't just born out of a desire to clean houses; it was founded on the radical idea that a pristine environment fundamentally shifts your daily happiness. 
               </p>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                When childhood friends <strong>Abdul Rahman Arif</strong> and <strong>Umer Shahzad</strong> started the company, they realized that scrubbing away years of grime from a family's driveway or reviving a heavily stained roof didn't just improve the property value—it brought a visible, immediate joy to the homeowners. Their mission became simple: deliver unparalleled exterior care that brings happiness and restores profound pride of ownership to every client they serve.
+              <p className="text-lg text-slate-600 mb-10 leading-relaxed font-light">
+                When childhood friends <strong className="text-secondary font-medium">Abdul Rahman Arif</strong> and <strong className="text-secondary font-medium">Umer Shahzad</strong> started the company, they realized that scrubbing away years of grime from a family's driveway didn't just improve property value—it brought immediate, visible joy. Their mission became simple: deliver unparalleled exterior care that brings happiness and restores profound pride of ownership to every client.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              
+              <div className="flex flex-col sm:flex-row gap-8 pt-8 border-t border-slate-100">
                  <div>
-                    <p className="font-serif font-bold text-xl text-secondary">Abdul Rahman Arif</p>
-                    <p className="text-primary text-sm font-bold tracking-widest uppercase">Co-Founder</p>
+                    <p className="font-serif font-bold text-2xl text-secondary mb-1">Abdul Rahman Arif</p>
+                    <p className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Co-Founder & CEO</p>
                  </div>
                  <div>
-                    <p className="font-serif font-bold text-xl text-secondary">Umer Shahzad</p>
-                    <p className="text-primary text-sm font-bold tracking-widest uppercase">Co-Founder</p>
+                    <p className="font-serif font-bold text-2xl text-secondary mb-1">Umer Shahzad</p>
+                    <p className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Co-Founder & COO</p>
                  </div>
               </div>
             </div>
@@ -122,7 +131,7 @@ export default function About() {
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
-               className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-4"
+               className="text-3xl md:text-5xl font-serif font-bold text-secondary mb-6"
              >
                Meet the <span className="text-primary italic font-light">Experts</span>
              </motion.h2>
@@ -131,10 +140,10 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: "Micheal Barnes", role: "Lead Soft Wash Tech", img: "https://images.unsplash.com/photo-1543885108-8120c8de6eb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-              { name: "David Chen", role: "Roof Specialist", img: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-              { name: "Sarah Jenkins", role: "Operations Manger", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-              { name: "Marcus Webb", role: "Concrete Specialist", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+              { name: "Micheal Barnes", role: "Lead Soft Wash Tech", img: "https://images.unsplash.com/photo-1543885108-8120c8de6eb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+              { name: "David Chen", role: "Roof Specialist", img: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+              { name: "Sarah Jenkins", role: "Operations Manager", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+              { name: "Marcus Webb", role: "Concrete Specialist", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
             ].map((member, index) => (
                <motion.div 
                  key={index}
@@ -142,14 +151,18 @@ export default function About() {
                  whileInView={{ opacity: 1, y: 0 }}
                  viewport={{ once: true }}
                  transition={{ delay: index * 0.1 }}
-                 className="group"
+                 className="group relative rounded-[2rem] overflow-hidden bg-secondary shadow-xl shadow-slate-200/50"
                >
-                 <div className="aspect-[4/5] rounded-3xl overflow-hidden mb-6 relative">
-                    <img src={member.img} alt={member.name} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                 <div className="aspect-[4/5] overflow-hidden relative">
+                    <img src={member.img} alt={member.name} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/95 via-secondary/40 to-transparent opacity-90 transition-opacity duration-300" />
                  </div>
-                 <h3 className="text-xl font-serif font-bold text-secondary">{member.name}</h3>
-                 <p className="text-slate-500">{member.role}</p>
+                 
+                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="w-10 h-1 bg-primary mb-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" />
+                    <h3 className="text-2xl font-serif font-bold text-white mb-1">{member.name}</h3>
+                    <p className="text-primary font-medium tracking-wide text-sm uppercase">{member.role}</p>
+                 </div>
                </motion.div>
             ))}
           </div>

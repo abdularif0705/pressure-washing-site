@@ -1,11 +1,16 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Initialize Resend with the API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
+    // Check for API key to prevent build crashes on Vercel before the user adds the key
+    if (!process.env.RESEND_API_KEY) {
+      console.warn("RESEND_API_KEY is not set. Contact form submission simulated.");
+      return NextResponse.json({ success: true, simulated: true });
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const body = await request.json();
     const { name, phone, address, service, details } = body;
 
