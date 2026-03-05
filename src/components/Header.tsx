@@ -19,30 +19,27 @@ export default function Header() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-4"
+          ? "bg-secondary/95 backdrop-blur-lg shadow-2xl py-4 border-b border-white/10"
           : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <Droplets size={24} className="text-secondary" />
-          </div>
-          <span className={`font-bold text-xl tracking-tight ${isScrolled ? "text-secondary" : "text-white"}`}>
-            Pressure Pro
+          <span className="font-serif font-bold text-2xl tracking-wide text-white">
+            <span className="text-primary">Pressure</span>Pro
           </span>
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#services" className={`text-sm font-medium transition-colors hover:text-primary ${isScrolled ? "text-secondary" : "text-white/90"}`}>
+          <a href="#services" className="text-sm font-medium transition-colors hover:text-primary text-white/90">
             Services
           </a>
-          <a href="#gallery" className={`text-sm font-medium transition-colors hover:text-primary ${isScrolled ? "text-secondary" : "text-white/90"}`}>
+          <a href="#gallery" className="text-sm font-medium transition-colors hover:text-primary text-white/90">
             Our Work
           </a>
-          <a href="#about" className={`text-sm font-medium transition-colors hover:text-primary ${isScrolled ? "text-secondary" : "text-white/90"}`}>
+          <a href="#about" className="text-sm font-medium transition-colors hover:text-primary text-white/90">
             Why Us
           </a>
         </nav>
@@ -51,14 +48,14 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <a
             href="tel:555-123-4567"
-            className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary-hover text-secondary px-5 py-2.5 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
+            className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary-hover text-secondary px-6 py-2 rounded-full font-semibold transition-all shadow-md hover:shadow-lg hover:shadow-primary/20 border border-primary/20"
           >
             <Phone size={18} />
             <span>(555) 123-4567</span>
           </a>
           
           <button
-            className={`md:hidden p-2 rounded-md ${isScrolled ? "text-secondary" : "text-white"}`}
+            className="md:hidden p-2 rounded-md text-white hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

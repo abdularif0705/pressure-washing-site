@@ -1,113 +1,131 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Send, MapPin, Phone, Mail } from "lucide-react";
+import { Send, MapPin, Phone, Mail, Sparkles } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="quote" className="py-24 bg-zinc-50 relative overflow-hidden">
-      {/* Decorative background shapes */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-200/20 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/3 pointer-events-none" />
+    <section id="quote" className="py-24 bg-white relative overflow-hidden">
+      {/* Premium Minimalist Background Lines */}
+      <div className="absolute inset-0 pointer-events-none border-x border-slate-100 max-w-7xl mx-auto -z-10 bg-[linear-gradient(to_right,#f8fafc_1px,transparent_1px),linear-gradient(to_bottom,#f8fafc_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl overflow-hidden shadow-primary/5 flex flex-col md:flex-row border border-gray-100">
+      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
-          {/* Contact Info Side */}
-          <div className="md:w-2/5 md:min-w-[400px] bg-secondary p-12 text-white flex flex-col justify-between">
-            <div>
-              <h3 className="text-3xl font-bold mb-4">Get Your Free Quote</h3>
-              <p className="text-slate-300 mb-12 leading-relaxed">
-                Fill out the form with details about your property, and we'll get back to you within 24 hours with a custom estimate.
-              </p>
+          {/* Elegant Text Side */}
+          <div className="flex flex-col">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 max-w-fit"
+            >
+              <Sparkles size={14} />
+              Book Your Service
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-secondary leading-[1.1] mb-6 tracking-tight"
+            >
+              Let's restore your property's <span className="text-primary italic font-light">brilliance.</span>
+            </motion.h2>
 
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
-                    <Phone className="text-sky-300" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Call Us Directly</h4>
-                    <p className="text-slate-400 mt-1">(555) 123-4567</p>
-                    <p className="text-slate-400 text-sm">Mon-Sat, 8am-6pm</p>
-                  </div>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-slate-500 mb-12 max-w-md leading-relaxed"
+            >
+              Fill out the form to receive a complimentary, no-obligation estimate within 24 hours. Prefer to speak directly? We're available Monday through Saturday.
+            </motion.p>
+
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.3 }}
+               className="space-y-6"
+            >
+              <div className="flex items-center gap-5">
+                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm transition-transform hover:scale-105">
+                  <Phone className="text-primary" size={24} />
                 </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
-                    <Mail className="text-sky-300" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Email Us</h4>
-                    <p className="text-slate-400 mt-1">hello@pressurepro.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
-                    <MapPin className="text-sky-300" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Service Area</h4>
-                    <p className="text-slate-400 mt-1">Serving Metro City & Surrounding Counties</p>
-                  </div>
+                <div>
+                  <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-1">Direct Line</p>
+                  <a href="tel:5551234567" className="text-xl font-bold text-secondary hover:text-primary transition-colors">(555) 123-4567</a>
                 </div>
               </div>
-            </div>
-            
-            <div className="mt-12 pt-12 border-t border-white/10 text-sm text-slate-400">
-               Fully licensed and insured for $2,000,000.
-            </div>
+
+              <div className="flex items-center gap-5">
+                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm transition-transform hover:scale-105">
+                  <Mail className="text-primary" size={24} />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-1">Email Support</p>
+                  <a href="mailto:hello@pressurepro.com" className="text-xl font-bold text-secondary hover:text-primary transition-colors">hello@pressurepro.com</a>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Form Side */}
-          <div className="md:w-3/5 p-6 md:p-12">
+          {/* Minimalist Premium Form Side */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.06)] border border-slate-100 relative"
+          >
+            {/* Subtle Gold accent line */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 rounded-b-full"></div>
+            
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-semibold text-gray-700">Full Name</label>
-                  <input type="text" id="name" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400" placeholder="John Doe" />
+                  <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Name</label>
+                  <input type="text" id="name" className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="John Doe" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-semibold text-gray-700">Phone Number</label>
-                  <input type="tel" id="phone" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400" placeholder="(555) 000-0000" />
+                  <label htmlFor="phone" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Phone</label>
+                  <input type="tel" id="phone" className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="(555) 000-0000" />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="address" className="text-sm font-semibold text-gray-700">Property Address</label>
-                <input type="text" id="address" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400" placeholder="123 Main St, City, State" />
+                <label htmlFor="address" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Address</label>
+                <input type="text" id="address" className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400" placeholder="123 Property Ave, City" />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="service" className="text-sm font-semibold text-gray-700">Primary Service Needed</label>
-                <select id="service" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all bg-white text-gray-700">
-                  <option value="">Select a service...</option>
+                <label htmlFor="service" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Service</label>
+                <select id="service" className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-slate-600 appearance-none cursor-pointer">
+                  <option value="">Select Primary Service...</option>
                   <option value="softwashing">House Soft Washing</option>
                   <option value="roof">Roof Cleaning</option>
                   <option value="gutter">Gutter Cleaning</option>
-                  <option value="driveway">Driveway / Concrete Cleaning</option>
-                  <option value="multiple">Multiple Services</option>
+                  <option value="driveway">Driveway & Concrete</option>
+                  <option value="multiple">Multiple / Full Property</option>
                 </select>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="details" className="text-sm font-semibold text-gray-700">Additional Details</label>
-                <textarea id="details" rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400 resize-none" placeholder="Tell us about the size of your home, specific stains, or areas of concern..."></textarea>
+                <label htmlFor="details" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Details (Optional)</label>
+                <textarea id="details" rows={3} className="w-full px-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-slate-400 resize-none" placeholder="Any specific areas of concern..."></textarea>
               </div>
 
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary hover:bg-primary-hover text-secondary font-extrabold text-lg py-4 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] flex items-center justify-center gap-2 transition-colors mt-4"
+              <button 
+                className="w-full group bg-secondary hover:bg-secondary-light text-primary font-bold text-lg py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 overflow-hidden mt-8"
               >
-                <Send size={20} />
-                Send Request
-              </motion.button>
-              
-              <p className="text-xs text-center text-gray-400 mt-4">We respect your privacy. Your information is never shared or sold.</p>
+                <span>Request Estimate</span>
+                <Send size={18} className="transition-transform group-hover:translate-x-1" />
+              </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

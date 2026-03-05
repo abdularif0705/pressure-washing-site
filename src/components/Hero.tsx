@@ -38,9 +38,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-sm font-medium text-sky-100 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm text-sm font-medium text-primary mb-6 shadow-[0_0_15px_rgba(212,175,55,0.15)]"
           >
-            <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
             Voted #1 Exterior Cleaning in the Area
           </motion.div>
           
@@ -66,17 +66,12 @@ export default function Hero() {
              transition={{ duration: 0.6, delay: 0.3 }}
              className="flex flex-col sm:flex-row gap-4 mb-20"
           >
-            {/* V3 Epic UI: Magnetic Buttons */}
-            <MagneticButton>
-              <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-secondary font-extrabold text-lg transition-all shadow-[0_0_40px_rgba(212,175,55,0.4)] hover:shadow-[0_0_60px_rgba(212,175,55,0.6)] border border-primary/20">
-                Get Your Free Quote
-              </a>
-            </MagneticButton>
-            <MagneticButton>
-              <a href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-lg backdrop-blur-sm transition-all border border-white/10">
-                View Our Services
-              </a>
-            </MagneticButton>
+            <a href="#quote" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-secondary font-semibold text-lg transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-primary/20 border border-primary/20">
+              Get Your Free Quote
+            </a>
+            <a href="#services" className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 border border-white/10 hover:border-white/30">
+              View Our Services
+            </a>
           </motion.div>
         </div>
       </div>

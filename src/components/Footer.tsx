@@ -47,9 +47,15 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-sm">
           <p>&copy; {currentYear} Pressure Pro Services. All rights reserved.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
+            <span className="text-slate-500">
+              Created by <a href="https://abdularif.me" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-hover transition-colors font-medium">Abdul Rehman Arif</a>
+            </span>
+            <span className="hidden md:inline text-slate-700">|</span>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            </div>
           </div>
         </div>
       </div>

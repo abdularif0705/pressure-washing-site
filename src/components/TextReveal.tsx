@@ -53,7 +53,7 @@ export default function TextReveal({
   return (
     <motion.div
       ref={ref}
-      style={{ overflow: "hidden", display: "flex", flexWrap: "wrap", gap: "0.25rem" }}
+      style={{ overflow: "hidden", display: "flex", flexWrap: "wrap", gap: "0.3em" }}
       variants={container}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
@@ -61,9 +61,9 @@ export default function TextReveal({
     >
       {words.map((word, index) => (
         <motion.span variants={child} key={index} style={{ display: "inline-block" }}>
-          {word === "True" ? (
+          {word === "original" ? (
             <span className="font-sans italic font-light text-primary">{word}</span>
-          ) : word === "Value." ? (
+          ) : word === "glory." ? (
             <span className="font-sans italic font-light text-primary">{word}</span>
           ) : (
              word
